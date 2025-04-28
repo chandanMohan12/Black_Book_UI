@@ -92,7 +92,7 @@ const DataComparison = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [openApproveDialog, setOpenApproveDialog] = useState(false);
 
-  const leftWidth = expanded ? "40%" : "10%";
+  const leftWidth = expanded ? "60%" : "15%";
 
   const handleUpdate = () => {
     setOpenSnackbar(true);
@@ -218,7 +218,7 @@ const DataComparison = () => {
         <Box
           sx={{
             p: 2,
-            width: '40%',
+            width: '60%',
             ml: 'auto',
             display: 'grid',
             gridTemplateColumns: '1fr auto auto auto',
