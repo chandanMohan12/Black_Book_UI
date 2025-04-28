@@ -24,11 +24,15 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Install AWS CLI
+      - name: Install AWS CLI (only if not installed)
         run: |
-          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-          unzip awscliv2.zip
-          sudo ./aws/install
+          if ! command -v aws &> /dev/null; then
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+          else
+            echo "AWS CLI is already installed"
+          fi
 
       - name: Configure AWS credentials
         run: |
