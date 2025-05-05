@@ -1,5 +1,5 @@
 import React from "react";
-import {Box,Toolbar,AppBar} from "@mui/material";
+import {Box, Toolbar, AppBar, IconButton } from "@mui/material";
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 const Header = () => {
@@ -18,9 +18,9 @@ const Header = () => {
 
                
         
-                <iconbutton>
+                <IconButton >
                     <ExitToAppIcon />
-                </iconbutton>
+                </IconButton >
             </Toolbar>
         </AppBar>
     );
