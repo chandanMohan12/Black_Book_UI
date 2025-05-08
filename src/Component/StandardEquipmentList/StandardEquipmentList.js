@@ -1,4 +1,4 @@
-import React, { useEffect,useState, useMemo,useRef } from "react";
+import React, { useState, useMemo } from "react";
 import {
   Typography,
   Box,
@@ -314,7 +314,7 @@ const StandardEquipmentList = () => {
     make: "",
     model: "",
   });
-  const iframeRef = useRef();
+  // const iframeRef = useRef();
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
@@ -372,25 +372,25 @@ const StandardEquipmentList = () => {
     "RDX",
   ];
 
-  useEffect(() => {
-    const token = '12oiwenw';
-    const userId = 'jxndxnwun';
+  // useEffect(() => {
+  //   const token = '12oiwenw';
+  //   const userId = 'jxndxnwun';
   
-    const message = {
-      type: 'AUTH_TOKEN',
-      token,
-      userId
-    };
+  //   const message = {
+  //     type: 'AUTH_TOKEN',
+  //     token,
+  //     userId
+  //   };
   
-    const sendAuthToken = () => {
-      iframeRef.current?.contentWindow.postMessage(message, 'https://d3m8kccplmhuxh.cloudfront.net');
-    };
+  //   const sendAuthToken = () => {
+  //     iframeRef.current?.contentWindow.postMessage(message, 'https://d3m8kccplmhuxh.cloudfront.net');
+  //   };
   
-    const iframe = iframeRef.current;
-    if (iframe) {
-      iframe.onload = sendAuthToken;
-    }
-  }, []);
+  //   const iframe = iframeRef.current;
+  //   if (iframe) {
+  //     iframe.onload = sendAuthToken;
+  //   }
+  // }, []);
 
   return (
     <Box sx={{ width: "100%" }}>
@@ -405,7 +405,7 @@ const StandardEquipmentList = () => {
 
         <Grid container spacing={2} sx={{ m: 1, mt: 2 }} alignItems="center">
           {/* Total Count */}
-          <Grid
+         {filters.status!=='Approved' && <Grid
             item
             xs={12}
             sm={6}
@@ -433,7 +433,7 @@ const StandardEquipmentList = () => {
                 <span>{filters.status}</span>
               </Box>
             </Typography>
-          </Grid>
+          </Grid>}
 
           {/* Status Dropdown */}
           <Grid item xs={12} sm={6}>

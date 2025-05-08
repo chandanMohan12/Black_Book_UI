@@ -57,7 +57,7 @@ const PDFPreviewer = () => {
     sidebarTabs: () => [],
   });
 
-  const pdfFileUrl = 'https://bbnewcarui.s3.ap-south-1.amazonaws.com/2025-s-class-sedan-order-guide-en_us.pdf';
+  const pdfFileUrl = 'pdfs/2025-s-class-sedan-order-guide-en_us.pdf';
 
   return (
     <div style={{ height: "95%", borderRadius: 16 }}>
